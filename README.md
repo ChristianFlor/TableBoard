@@ -3,11 +3,11 @@
 1. Asegúrate de tener instalado Python 3 en tu computadora.
 2. Descarga todos los archivos de la aplicación y guárdalos en una carpeta.
 3. Abre una terminal y navega hasta la carpeta donde se encuentran los archivos de la aplicación.
-4. Crea un entorno virtual ejecutando el siguiente comando en la terminal: python3 -m venv venv
+4. Crea un entorno virtual ejecutando el siguiente comando en la terminal: python3 -m venv venv  
 5. Activa el entorno virtual ejecutando el siguiente comando en la terminal:
     En Windows: venv\Scripts\activate
     En macOS/Linux: source venv/bin/activate
-6. Instala todas las dependencias necesarias ejecutando el siguiente comando en la terminal: pip install -r requirements.txt
+6. Instala todas las dependencias necesarias ejecutando el siguiente comando en la terminal: pip install -r requirements.txt y pip install --upgrade pandas
 7. Ejecuta la aplicación con el siguiente comando: python app.py
 8. Abre tu navegador web y navega a http://localhost:5000.
 9. En la página web, selecciona el archivo .xlsx que quieres procesar y haz clic en "Procesar archivo".

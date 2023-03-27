@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file
 import pandas as pd
+from io import BytesIO
 
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ def index():
 def upload_file():
     uploaded_file = request.files['file']
     df = pd.read_excel(uploaded_file)
+    
     df.columns =['identificador', 'nombreCita', 'documento', 'gruposDocumentos',
        'contenidoCita', 'comentario', 'codigos', 'referencia', 'densidad',
        'modificadoPor', 'creado', 'modificado']
@@ -28,10 +30,12 @@ def upload_file():
     # Exportar los datos pivoteados como un archivo CSV
     # Generar el archivo CSV
     csv = datos_pivoteados.to_csv('datos_pivoteados.csv', sep=';', index=True)
+    with open('datos_pivoteados.csv', 'rb') as f:
+        csv = BytesIO(f.read())
 
     # Devolver el archivo CSV como descarga
     return send_file(
-        pd.compat.StringIO(csv),
+        csv,
         mimetype='text/csv',
         attachment_filename='resultado.csv',
         as_attachment=True
