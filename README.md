@@ -26,6 +26,7 @@ python app.py
 10. Espera a que la aplicación procese el archivo. Una vez que se haya completado, aparecerá un enlace para descargar el archivo .csv generado.
 11. Cuando hayas terminado de usar la aplicación, puedes desactivar el entorno virtual ejecutando el siguiente comando en la terminal: deactivates
 
+![Demo](Demo.gif)
 
 # Para docker
 ```bash
